@@ -5,20 +5,32 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import javax.validation.constraints.NotBlank;
+
 @Entity
 public class Yeast {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     private String name;
+    @NotBlank
     private String style;
+    @NotBlank
     private String brand;
+    @NotBlank
     private Integer temperatureMinimum;
+    @NotBlank
     private Integer temperatureMaximum;
+    @NotBlank
     private String sediment;
+    @NotBlank
     private Double pitchingRateMinimum;
+    @NotBlank
     private Double pitchingRateMaximum;
+    @NotBlank
     private String aromas;
+    @NotBlank
     private String type;
 
     public Long getId() {
