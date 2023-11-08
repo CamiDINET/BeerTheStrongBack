@@ -20,12 +20,12 @@ public class RecipeController {
     public Recipe getRecipeWithId(@PathVariable Long recipeId){
         return recipeRepository.findById(recipeId).get();
     }
-    @PostMapping("recipe")
+    @PostMapping("recipes")
     public Recipe addRecipe(@RequestBody Recipe recipe){
         return recipeRepository.save(recipe);
     }
 
-    @PutMapping("recipe/{recipeId}")
+    @PutMapping("recipes/{recipeId}")
     public Recipe updateRecipe(@PathVariable Long recipeId, @RequestBody Recipe recipe){
         Recipe recipeToModified = recipeRepository.findById(recipeId).get();
         recipeToModified.setAlcohol(recipe.getAlcohol());
@@ -44,7 +44,7 @@ public class RecipeController {
         return recipeRepository.save(recipeToModified);
     }
 
-    @DeleteMapping("recipe/{recipeId}")
+    @DeleteMapping("recipes/{recipeId}")
     public Boolean deleteRecipe(@PathVariable Long recipeId){
         recipeRepository.deleteById(recipeId);
         return true;

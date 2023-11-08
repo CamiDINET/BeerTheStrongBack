@@ -11,7 +11,7 @@ import java.util.List;
 public class YeastStockController {
     @Autowired
     YeastStockRepository yeastStockRepository;
-    @GetMapping("/yeastsStock")
+    @GetMapping("yeastsStock")
     public List<YeastStock> getAllYeasts(){
         return yeastStockRepository.findAll();
     }
@@ -34,7 +34,7 @@ public class YeastStockController {
         return yeastStockRepository.save(yeastStockToModified);
     }
 
-    @DeleteMapping("hops/{yeastId}")
+    @DeleteMapping("yeastsStock/{yeastId}")
     public Boolean deleteYeast(@PathVariable Long yeastId){
         yeastStockRepository.deleteById(yeastId);
         return true;
